@@ -1,5 +1,8 @@
-import express from "express"
-const app = express()
+import express from 'express';
+import postsRoutes from './routes/posts.routes.js';
+const app = express();
 
-app.listen(3000)
-console.log("Server in running port", 3000)
+app.use(postsRoutes);
+
+app.listen(3000);
+console.log('Server in running port', 3000);
