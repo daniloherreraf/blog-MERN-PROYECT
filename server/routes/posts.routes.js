@@ -10,7 +10,7 @@ const router = Router();
 
 router.get('/posts', getPosts);
 router.post('/posts', createPost);
-router.put('/posts', updatePost);
+router.put('/posts/:id', updatePost);
 router.delete('/posts', deletePost);
 router.get('/posts/:id', getByIdPost);
 
