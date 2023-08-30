@@ -16,6 +16,7 @@ export const updatePost = async (req, res) => {
   const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });
+  if (!post) return res.sendStatus(404);
   return res.json(post);
 };
 
@@ -27,4 +28,8 @@ export const deletePost = async (req, res) => {
   return res.sendStatus(204);
 };
 
-export const getByIdPost = (req, res) => res.send('getting a post');
+export const getByIdPost = async(req, res) => {
+  const post = await Post.findById(req.params.id)
+  if (!post) return res.sendStatus(404);
+  return res.json(post)
+}
