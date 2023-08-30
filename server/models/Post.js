@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const postSchema = new mongoose.Schema({
-  title: {
+  tittle: {
     type: String,
     required: true,
     trim: true,
